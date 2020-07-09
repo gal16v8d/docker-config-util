@@ -11,6 +11,7 @@ public final class DockerEnvLoader {
     public static String getDockerServiceIp() {
         String dockerHost = System.getenv("DOCKER_HOST");
         return Optional.ofNullable(dockerHost).map(host -> host.substring(0, host.lastIndexOf(':')))
+                .map(modifiedHost -> modifiedHost.substring(modifiedHost.lastIndexOf('/') + 1))
                 .orElseThrow(() -> new DockerEnvException("No docker env configured"));
     }
 

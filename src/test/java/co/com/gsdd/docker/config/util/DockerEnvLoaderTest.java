@@ -9,6 +9,6 @@ public class DockerEnvLoaderTest {
     @Test
     @EnabledIfEnvironmentVariable(named = "DOCKER_HOST", matches = "tcp://192.168.99.113:2376")
     public void testGetDockerServiceIp() {
-        Assertions.assertEquals("tcp://192.168.99.113", DockerEnvLoader.getDockerServiceIp());
+        Assertions.assertEquals("192.168.99.113", DockerEnvLoader.getDockerServiceIp());
     }
 }
