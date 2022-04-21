@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class DockerEnvLoader {
 
-  public static String getDockerServiceIp() {
-    String dockerHost = System.getenv("DOCKER_HOST");
-    return Optional.ofNullable(dockerHost).map(host -> host.substring(0, host.lastIndexOf(':')))
-        .map(modifiedHost -> modifiedHost.substring(modifiedHost.lastIndexOf('/') + 1))
-        .orElseGet(() -> "localhost");
-  }
-
+    public static String getDockerServiceIp() {
+        String dockerHost = System.getenv("DOCKER_HOST");
+        return Optional.ofNullable(dockerHost)
+                .map(host -> host.substring(0, host.lastIndexOf(':')))
+                .map(modifiedHost -> modifiedHost.substring(modifiedHost.lastIndexOf('/') + 1))
+                .orElseGet(() -> "localhost");
+    }
 }
