@@ -42,7 +42,7 @@
 
 		<lombok.version>1.18.24</lombok.version>
 		<!-- test dependencies -->
-		<junit.version>5.9.0</junit.version>
+		<junit.version>5.9.1</junit.version>
 	</properties>
 
 	<dependencies>
