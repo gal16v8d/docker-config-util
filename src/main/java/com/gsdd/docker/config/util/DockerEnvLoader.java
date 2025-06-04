@@ -12,6 +12,6 @@ public final class DockerEnvLoader {
     return Optional.ofNullable(dockerHost)
         .map(host -> host.substring(0, host.lastIndexOf(':')))
         .map(modifiedHost -> modifiedHost.substring(modifiedHost.lastIndexOf('/') + 1))
-        .orElseGet(() -> "localhost");
+        .orElse("localhost");
   }
 }
